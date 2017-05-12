@@ -1,0 +1,794 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SimpleMDM",
+		"_postman_id": "e55a55d5-a262-a06a-0988-d4b4a1e69a26",
+		"description": "Collection for https://simplemdm.com/docs/api/",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"description": "",
+			"item": [
+				{
+					"name": "Show account",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/account",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Retrieve information about your account."
+					},
+					"response": []
+				},
+				{
+					"name": "Update account",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/account",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apple_store_country_code",
+									"value": "{{apple_store_country_code}}",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "App groups",
+			"description": "",
+			"item": [
+				{
+					"name": "List all app groups",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/app_groups",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get one app group",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/app_groups/{{APP_GROUP_ID}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create app group",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/app_groups",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{APP_GROUP_NAME}}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "auto_deploy",
+									"value": "False",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update app group",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/app_groups/{{APP_GROUP_ID}}",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{APP_GROUP_NAME}}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "auto_deploy",
+									"value": "true",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete app group",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/app_groups/{{APP_GROUP_ID}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Assign app to app group",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/app_groups/{{APP_GROUP_ID}}/apps/{{APP_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Unassign app from app group",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/app_groups/{{APP_GROUP_ID}}/apps/{{APP_ID}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Push app group to app device group",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/app_groups/{{APP_GROUP_ID}}/device_groups/{{DEVICE_GROUP_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Unassign device group",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/app_groups/{{APP_GROUP_ID}}/device_groups/{{DEVICE_GROUP_ID}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Assign device group",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/app_groups/{{APP_GROUP_ID}}}/devices/{{DEVICE_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Unassign device group",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/app_groups/{{APP_GROUP_ID}}}/device_groups/{{DEVICE_GROUP_ID}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Assign device",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/app_groups/{{APP_GROUP_ID}}/devices/{{DEVICE_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Unassign device",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/app_groups/{{APP_GROUP_ID}}/devices/{{DEVICE_ID}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Apps",
+			"description": "",
+			"item": [
+				{
+					"name": "List all apps",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/apps",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get one app",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/apps/{{APP_ID}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Add app",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/apps",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "app_store_id",
+									"value": "",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "bundle_id",
+									"value": "",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "binary",
+									"value": "",
+									"type": "file",
+									"enabled": false
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update app",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/apps/{{APP_ID}}",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "binary",
+									"value": "",
+									"type": "file",
+									"enabled": false
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete app",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/apps/{{APP_ID}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Retreive one app",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/installed_apps/{{INSTALLED_APP_ID}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Uninstall installed app",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/installed_apps/{{INSTALLED_APP_ID}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Device Groups",
+			"description": "",
+			"item": [
+				{
+					"name": "List all device groups",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/device_groups",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "List one device group",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/device_groups/{{DEVICE_GROUP_ID}}\n",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Assign device to device group",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/device_groups/{{DEVICE_GROUP_ID}}/devices/{{DEVICE_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Devices",
+			"description": "",
+			"item": [
+				{
+					"name": "Get all devices",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/devices",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get one device",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/devices/{{DEVICE_ID}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create device",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/devices",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{{DEVICE_NAME}}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group_id",
+									"value": "{{DEVICE_GROUP_ID}}",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get installed apps on device",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/devices/{{DEVICE_ID}}/installed_apps",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lock device",
+					"request": {
+						"url": "POST https://a.simplemdm.com/api/v1/devices/{{DEVICE_ID}}}/lock",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message",
+									"value": "",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "pin",
+									"value": "",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Clear device passcode",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/devices/{{DEVICE_ID}}}/clear_passcode",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Wipe device",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/devices/{{DEVICE_ID}}/wipe",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Push apps to device",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/devices/{{DEVICE_ID}}}/push_apps",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete device",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/devices/{{DEVICE_ID}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Managed App Configs",
+			"description": "",
+			"item": [
+				{
+					"name": "Retreive config for one app",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/apps/{{APP_ID}}/managed_configs",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Push certificates",
+			"description": "",
+			"item": [
+				{
+					"name": "Show push certificate",
+					"request": {
+						"url": "https://a.simplemdm.com/api/v1/push_certificate",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

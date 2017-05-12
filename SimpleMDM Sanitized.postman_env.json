@@ -1,0 +1,70 @@
+{
+  "id": "54eaa2bc-043a-525d-56be-d32397a1d35e",
+  "name": "SimpleMDM Sanitized",
+  "values": [
+    {
+      "enabled": true,
+      "key": "AUTH",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "APPLESTORE_COUNTRY_CODE",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "APP_ID",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "APP_GROUP_ID",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "APP_GROUP_NAME",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "DEVICE_ID",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "DEVICE_NAME",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "DEVICE_GROUP_ID",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "INSTALLED_APP_ID",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "MANAGED_CONFIG_ID",
+      "value": "",
+      "type": "text"
+    }
+  ],
+  "timestamp": 1494624299613,
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2017-05-12T21:25:03.827Z",
+  "_postman_exported_using": "Postman/4.10.7"
+}
